@@ -7,10 +7,7 @@ class Person:
 
 
 def create_person_list(people):
-    result = []
-    for person in people:
-        p = Person(person["name"], person["age"])
-        result.append(p)
+    result = [Person(person["name"], person["age"]) for person in people]
     for pep_data in people:
         pers = Person.people[pep_data["name"]]
         wife_name = pep_data.get("wife")
